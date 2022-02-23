@@ -5,16 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        td{
+            border: 2px solid black;
+            padding: 30px;
+        }
+        input{
+            margin: 12px;
+        }
+    </style>
+
 </head>
-<body>
+<body >
+    <header>
+        <H1>Batalha naval</H1>
+    </header>
+    <section>
+        
+        X : <input type="number" name="xtxt" id="xtxt">
+        <br>
+        Y : <input type="number" name="ytxt" id="ytxt">
+        <br>
+        <input type="button" value="Disparar" onclick="incremento(); disparar();">
+
+        <p id="distancia">distancia</p>
+
+        tentativas: <p id="contador">0</p>
+
+        <table id="idTable"></table>
+
+    </section>
+
     <script>
 
-        var n1 = 2
-        var n2 = 4
-        var s = n1 + n2
+        function desenha() {
+            
+            let mapa = '';
 
-        window.alert(s)
+            for (let i = 0; i < 10; i++) {
+                mapa += "<tr>";
+                for (let j = 0; j < 10; j++) {
+                    switch (arrayMapa[i][j]) {
 
+                        case 0:
+                            mapa += '<td></td>';
+                            
+                            break;
+                        
+                        case 1 :
+                            mapa += '<td style="background-color: black;"></td>';
+
+                            break;
+
+                        case 2 :
+                            mapa += '<td style="background-color: red;"></td>';
+
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                    
+                    
+                }
+                mapa += "</tr>";
+            }
+
+            document.getElementById('idTable').innerHTML = (mapa);
+
+        }
+
+        function disparar(){
+    
+            let x1 = parseInt(document.getElementById('xtxt').value);
+            let y1 = parseInt(document.getElementById('ytxt').value);
+
+            let distancia = Math.sqrt((ponto.x - x1) *(ponto.x - x1) + (ponto.y - y1) *(ponto.y - y1));
+
+            if (distancia > 0) {
+                arrayMapa[y1][x1] = 1;
+            } else {
+                arrayMapa[y1][x1] = 2;
+            }
+
+            document.getElementById('distancia').innerHTML = distancia;
+            
+            desenha();
+
+            
+        }
+
+        let increment = 0
+        function incremento(){
+
+            document.getElementById('contador').innerHTML = increment++
+            
+        }
+
+        let arrayMapa = [];
+        for (let i = 0; i < 10; i++) {
+            arrayMapa[i] = [];
+            for (let j = 0; j < 10; j++) {
+                arrayMapa[i] [j] = 0;
+                
+            }
+            
+        }
+
+
+        let px = parseInt(Math.random()*10);
+        let py = parseInt(Math.random()*10);
+        let ponto = {x:px,y:py};
+        
+        desenha()
     </script>
 </body>
 </html>
