@@ -33,6 +33,8 @@
 
         tentativas: <p id="contador">0</p>
 
+        pontos restantes: <p id="pontosRestantes">0</p>
+
         <table id="idTable"></table>
 
     </section>
@@ -81,16 +83,30 @@
             let x1 = parseInt(document.getElementById('xtxt').value);
             let y1 = parseInt(document.getElementById('ytxt').value);
 
-            let distancia = Math.sqrt((ponto.x - x1) *(ponto.x - x1) + (ponto.y - y1) *(ponto.y - y1));
+            let distancia = 100;
+            let posicao = 0;
+
+            for (let i = 0; i < arrayPontos.length; i++) {
+
+                let d1 = Math.sqrt((arrayPontos[i].x - x1) *(arrayPontos[i].x - x1) + (arrayPontos[i].y - y1) *(arrayPontos[i].y - y1));
+                
+                if (d1 < distancia){
+                    posicao = i;
+                    distancia = d1;
+                }
+
+            }
 
             if (distancia > 0) {
                 arrayMapa[y1][x1] = 1;
             } else {
                 arrayMapa[y1][x1] = 2;
+                arrayPontos.splice(posicao,1)
             }
 
             document.getElementById('distancia').innerHTML = distancia;
-            
+            document.getElementById('pontosRestantes').innerHTML = arrayPontos.length;
+            console.log (arrayPontos);
             desenha();
 
             
@@ -113,10 +129,16 @@
             
         }
 
+        let arrayPontos = [];
+        
+        for (let p = 0; p < 5; p++) {
+        
+            let px = parseInt(Math.random()*10);
+            let py = parseInt(Math.random()*10);
+            let ponto = {x:px,y:py};
+            arrayPontos.push(ponto);
 
-        let px = parseInt(Math.random()*10);
-        let py = parseInt(Math.random()*10);
-        let ponto = {x:px,y:py};
+        }
         
         desenha()
     </script>
