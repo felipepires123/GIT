@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            input#comentario{
+                height: 500px;
+                width: 400px;
+            }
+            table{
+                border: 3px solid black;
+            }
+            td{
+            
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <Header>
+            <h1>Ola diga-nos o que achou da viagem</h1>
+        </Header>
+        <section>
+            
+            <form>
+                <h2>Digite seu nome</h2>
+                <input type="text" name="nometxt" id="nometxt">
+
+                <h2>Sua nota de 1 a 5</h2>
+                
+                <div>
+                <INPUT TYPE="RADIO" NAME="nota" VALUE="1">
+                <INPUT TYPE="RADIO" NAME="nota" VALUE="2">
+                <INPUT TYPE="RADIO" NAME="nota" VALUE="3">
+                <INPUT TYPE="RADIO" NAME="nota" VALUE="4">
+                <INPUT TYPE="RADIO" NAME="nota" VALUE="5">
+                </div>
+                <p>1 2 3 4 5</p> 
+                
+            </form>
+            <form>
+                <input type="text" name="comentario" id="comentario">
+                <br>
+                <input type="button" value="Enviar" onclick="enviar()">
+            </form>
+        </section>
+
+        <section>
+            <table id="tabela">
+                <tr>
+                    <td>nome</td>
+                    <td>nota</td>
+                    <td>obs</td>
+                </tr>
+            </table>
+        </section>
+
+        <script>
+            function enviar() {
+                
+                let nome = document.getElementById('nometxt').value
+                let nota = document.querySelector('input[name="nota"]:checked').value
+                let obs = document.getElementById('comentario').value
+                
+
+                let p = ''
+
+                for (let i = 0; i < 1; i++) {
+                    p += '<tr>'
+                    for (let j = 0; j < 1; j++) {
+                        p += `<td> ${nome} </td> `
+                        
+                    }
+                    for (let k = 0; k < 1; k++) {
+                        p += `<td> ${nota} </td> `
+                        
+                    }
+                    for (let l = 0; l < 1; l++) {
+                        p += `<td> ${obs} </td> `
+                        
+                    }
+                        
+                    p += '</tr>'
+
+                    let nome = document.getElementById('nometxt').innerHTML
+                    let nota = document.querySelector('input[name="nota"]:checked').innerHTML
+                    let obs = document.getElementById('comentario').innerHTML
+                }
+                document.getElementById('tabela').innerHTML += p
+
+            }
+        </script>
+    </body>
+</html>
