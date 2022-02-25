@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Devin - Calculadora Complexa</title>
+
+        <style>
+
+            body{
+                background-color: rgb(247, 233, 154);
+            }
+
+            div{
+                border: solid black;
+                border-radius: 38px;
+                height: 500px;
+                width: 380px;
+                margin: 50px auto;
+                padding: 0px;
+                background-color: aliceblue;
+                box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.849);
+            }
+            header{
+                margin: auto;
+            }
+            h1{
+                text-align: center;
+            }
+
+            form{
+                text-align: center;
+            }
+
+            input#painel{
+                font-size: 18pt;
+                height: 50px;
+                width: 260px;
+                margin: 10px;
+                padding: 3px 15px 3px 15px;
+                border: solid black 2px;
+                border-radius: 35px;
+                border:black 2px ;
+                -moz-appearance: button;
+            }
+
+            input[type=number]::-webkit-inner-spin-button { 
+                -webkit-appearance: none;
+            }
+
+            table{
+                height: 200px;
+                width: 200px;
+                margin: auto;
+            }
+            
+            input.n{
+                height:70px;
+                width: 70px;
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 50px;
+            }
+
+            input.oper{
+                height: 70px;
+                width: 70px;
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 50px;
+            }
+
+            
+
+        </style>
+
+    </head>
+
+    <body>
+    <div>
+        <header>
+            <h1>Calculadora</h1>
+        </header>
+        <section>
+            <form name="calcform" method="post" action="">
+
+                <input type="number" name="painel" id="painel" />
+
+                <table id="calc">
+                    <tr>
+                        <td><input type="button" name="n9" class="n" value="9" onclick="calcNum(9)" /></td>
+                        <td><input type="button" name="n8" class="n" value="8" onclick="calcNum(8)" /></td>
+                        <td><input type="button" name="n7" class="n" value="7" onclick="calcNum(7)" /></td>
+                        <td><input type="button" name="somar" class="oper" value="+" onclick="calcParse('somar')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="n6" class="n" value="6" onclick="calcNum(6)" /></td>
+                        <td><input type="button" name="n5" class="n" value="5" onclick="calcNum(5)" /></td>
+                        <td><input type="button" name="n4" class="n" value="4" onclick="calcNum(4)" /></td>
+                        <td><input type="button" name="subtrair" class="oper" value="-" onclick="calcParse('subtrair')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="n3" class="n" value="3" onclick="calcNum(3)" /></td>
+                        <td><input type="button" name="n2" class="n" value="2" onclick="calcNum(2)" /></td>
+                        <td><input type="button" name="n1" class="n" value="1" onclick="calcNum(1)" /></td>
+                        <td><input type="button" name="multiplicar" class="oper" value="*" onclick="calcParse('multiplicar')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="n0" class="n" value="0" onclick="calcNum(0)" /></td>
+                        <td><input type="button" name="igual" class="n" value="=" onclick="calcParse('resultado')" /></td>
+                        <td><input type="button" name="limpar" class="n" value="AC" onclick="calcLimpar()" /></td>
+                        <td><input type="button" name="dividir" class="oper" value="/" onclick="calcParse('dividir')" /></td>
+                    </tr>
+                </table>
+                
+            </form>
+        </section>
+    </div>
+
+    <script >
+        
+        // Função que adiciona os números
+        function calcNum(n) {
+            if (typeof acvisor == 'undefined') {
+                document.calcform.painel.value = '';
+            }
+            document.calcform.painel.value = document.calcform.painel.value + n;
+            acvisor = 1;
+        }
+        
+        // Função que limpa a calculadora
+        function calcLimpar() {
+            document.calcform.painel.value = '';
+            delete acvalor;
+            delete acoper;
+            delete acvisor;
+        }
+        
+        // Função que executa as operações
+        function calcOper(oper, valor1, valor2) {
+            if (oper == "somar") {
+                var valor = parseFloat(valor1) + parseFloat(valor2);
+            } else {
+                if (oper == "subtrair") {
+                    var valor = valor1 - valor2;
+                } else {
+                    if (oper == "multiplicar") {
+                        var valor = valor1 * valor2;
+                    } else {
+                        var valor = valor1 / valor2;
+                    }
+                }
+            }
+        
+            return(valor);
+        }
+        
+        // Função do algoritmo
+        
+            function calcParse(oper) {
+                var valor = document.calcform.painel.value;
+                delete acvisor;
+            
+                if (typeof acoper != 'undefined' && oper == 'resultado') {
+                    acvalor = calcOper(acoper, acvalor, valor);
+                    document.calcform.painel.value = acvalor;
+                    delete oper;
+                    delete acvalor;
+                    return(0);
+                }
+            
+                if (typeof acvalor != 'undefined') {
+                    acvalor = calcOper(acoper, acvalor, valor);
+                    acoper = oper;
+                    document.calcform.painel.value = acvalor;
+                } else {
+                    acvalor = valor;
+                    acoper = oper;
+                }
+        
+            }
+        
+        </script>
+    </body>
+</html>
