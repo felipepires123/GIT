@@ -7,15 +7,58 @@
         <title>Document</title>
 
         <style>
-            input#comentario{
-                height: 500px;
-                width: 400px;
+            body{
+                background-color: rgb(197, 237, 255);
+            }
+
+            header{
+                float: inline-start;
+                text-align: center;
+                background-color: rgb(12, 1, 160);
+                margin: 5px;
+                padding: 5px;
+                border: black solid 2px;
+                color: white;
+            }
+           
+            
+            section#form{
+                margin: 20px auto 50px auto;
+                padding: 5px;
+                width: 250px;
+                text-align: center;
+                border: black solid ;
+                border-radius: 30px;
+            }
+            p{
+                word-spacing: 13px;
+                margin-top: 0px;
+            }
+            div{
+                padding: 0px;
+            }
+            textarea{
+                width: 225px;
+                resize: vertical;
+            }
+            input#b{
+                margin: 10px;
+            }
+            
+            
+            section#tab{
+                margin: 5px;
+                text-align: center;
             }
             table{
                 border: 3px solid black;
+                height: auto;
+                width: 45% ;
+                background-color: white;
+                margin: auto;
             }
             td{
-            
+                padding: 3px;
                 border: 2px solid black;
             }
         </style>
@@ -24,8 +67,7 @@
         <Header>
             <h1>Ola diga-nos o que achou da viagem</h1>
         </Header>
-        <section>
-            
+        <section id="form"> 
             <form>
                 <h2>Digite seu nome</h2>
                 <input type="text" name="nometxt" id="nometxt">
@@ -43,13 +85,13 @@
                 
             </form>
             <form>
-                <input type="text" name="comentario" id="comentario">
+                <textarea type="text" name="comentario" id="comentario"></textarea>
                 <br>
-                <input type="button" value="Enviar" onclick="enviar()">
+                <input type="button" id="b" value="Enviar" onclick="enviar()">
             </form>
         </section>
 
-        <section>
+        <section id="tab">
             <table id="tabela">
                 <tr>
                     <td>nome</td>
@@ -85,13 +127,11 @@
                     }
                         
                     p += '</tr>'
-
-                    let nome = document.getElementById('nometxt').innerHTML
-                    let nota = document.querySelector('input[name="nota"]:checked').innerHTML
-                    let obs = document.getElementById('comentario').innerHTML
+                    
                 }
                 document.getElementById('tabela').innerHTML += p
 
+                
             }
         </script>
     </body>
