@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Página de portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
@@ -12,27 +13,33 @@
         <H1>
             Portfólio Carlos Felipe Ramos Pires
         </H1>
+        <img src="imagens/fotaminha.png" id="perfil" alt="">
+        <select name="idioma" id="idioma">
+            <option value="1">Português</option>
+            <option value="2">English</option>
+        </select>
+        <input type="button" value="Traduzir" onclick="lingua()">
     </header>
     <section>
         <article>
-            <p>
-                Hello my name is Carlos Felipe Ramos Pires, I am a beginner programmer, and I created this webpage to present some pages that I have created over time, since I started programming.
+            <p id="p1">
+                Olá meu nome é Carlos Felipe Ramos Pires, sou programador iniciante, e criei esta página web para apresentar algumas páginas que criei ao longo do tempo, desde que comecei a programar.
             </p>
-            <p>
-                The language i use is JavaScript, i also know the basics of PHP, but not used on these pages, and using HTML and CSS to structure everything.
+            <p id="p2">
+                A linguagem que uso é JavaScript, também conheço o básico de PHP, mas não uso nestas páginas, e uso HTML e CSS para estruturar tudo.
             </p>
         </article>
         <ul id="fotos">
             <a href="Calculadora.html">
                 <li id="foto01">
-                    <span>
+                    <span id="calc">
                         Calculadora
                     </span>
                 </li>
             </a>
             <a href="Jogo de caca ao tesouro .html">
                 <li id="foto02">
-                    <span>
+                    <span id="pontos">
                         Caça aos pontos
                     </span>
                 </li>
@@ -40,7 +47,7 @@
             <a href="planilha de dados.html">
                 <li id="foto03">
                 
-                    <span>
+                    <span id="planilha">
                         Planilha de dados somados
                     </span>
                 
