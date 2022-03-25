@@ -1,97 +1,156 @@
 body{
-    background-color: rgb(161, 245, 172);
+    background-color: rgb(255, 255, 255);
 }
+/*cabeçalho da pagina*/
 header{
-    border: 3px rgba(0, 0, 0, 0) solid;
+    border: 3px rgba(255, 255, 255, 0) solid;
     width: 800px;
     align-self: center;
-    margin: 10px auto;
-    
+    margin: 10px auto;   
 }
-h1{
-    
-    color: rgba(0, 0, 0, 0.89);
-    background-color: rgb(255, 255, 255);
-    margin: 10px auto;
-    text-align: center;
-    width: 500px;
-    border-radius: 250px;
-    padding: 5px;
-    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.493);
-}
-#perfil{
-    height: 70px;
-    width: 70px;
-    float: right;
-    top: -69px;
-    left: -60px;
-    position: relative;
-    border-radius: 70px;
-}
+    /*esse form é da linguagem */
+    form{
+        position: relative;
+        top: -58px ;
+        left: -500px;
+        text-align: center;
+        margin: auto;
+        border: rgba(0, 0, 0, 0) solid 2px;
+        width: 100px;
+        height: auto;
+    }
+    p#linguagem{
+        margin: 4px;
+        font-family: fantasy;
+    }
+    #traduzab{
+        background-color: rgb(61, 88, 161);
+        color: white;
+        border: unset;
+        margin: 4px;
+        border-radius: 5px;
+    }
+    #idioma{
+        border: solid 5px rgb(61, 88, 161);
+        border-radius: 10px;
+    }
+    /*Esse H1 é do titulo*/
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(0, 0, 0, 0.89);
+        background-color: rgb(61, 88, 161);
+        margin: 10px auto;
+        text-align: center;
+        width: 550px;
+        border-radius: 250px;
+        padding: 5px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.479);
+        color: white;
+        border: solid 2px black;
+    }
+    /*Fotinha de perfil*/
+    #perfil{
+        height: 70px;
+        width: 70px;
+        float: right;
+        top: -69px;
+        left: -20px;
+        position: relative;
+        border-radius: 70px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.521);
+        border: 2px solid black;
+    }
+    /*icone da pagina de curriculo*/
+    a#curriculo{
+        float: left;
+        background-color: white;
+        border-radius: 60px;
+        padding: 0px;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        position: relative;
+        left: 20px;
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+        border: black solid 2px;
+    }
+    #curriculoimg{
+        height: 50px;
+        width: 50px;
+        margin: auto;
+        left: 5px;
+        top: 10px;
+        position: relative;
+    }
+
+
+/*Corpo da pagina*/
 section{
     width: 930px;
-    background-color: aliceblue;
+    background-color: rgb(196, 227, 255);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.514);
     border-radius: 20px;
     text-align: justify;
     padding: 10px;
     margin: auto;
+    border: 1px solid black;
+    font-family:Arial, Helvetica, sans-serif ;
 }
-img{
-    width: 480px;
-    height: 250px;
-}
-ul#fotos {
-    width: 900px;
-    padding: 5px;
-    overflow: hidden;
-    padding: 50px;
-    margin: auto;
-}
-ul#fotos li{
-    list-style: none;
-    float:left;
-    width: 240px;
-    height: 125px;
-    border: 3px solid black;
-    margin: 15px;
-    -webkit-transition: all 0.5s ease-in;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-span{
-    text-align: center;
-    opacity: 0;
-    margin: 10px;
-    
-}
-li:hover span{
-    opacity: 1;
-    background-color: rgba(128, 128, 128, 0.363);
-    padding: 4px;
-    border-radius: 5px;
-    margin: 10px;
-}
-li:hover{
-    -webkit-transform: scale(1.5);
-}
-li#foto01{
-    background: url(imagens/calculadora.png);
-    background-position: center;
-    border-radius: 10px;
-    background-size: 480px 250px;
-}
-li#foto02{
-    background: url(imagens/Caça\ aos\ pontos.png);
-    background-position: center;
-    border-radius: 10px;
-    background-size: 480px 250px;
-}
-li#foto03{
-    background: url(imagens/planilha\ de\ dados\ somados.png);
-    background-position: center;
-    border-radius: 10px;
-    background-size: 480px 250px;
-}
+    img{
+        width: 480px;
+        height: 250px;
+    }
+    ul#fotos {
+        width: 900px;
+        padding: 5px;
+        overflow: hidden;
+        padding: 50px;
+        margin: auto;
+    }
+    ul#fotos li{
+        list-style: none;
+        float:left;
+        width: 240px;
+        height: 125px;
+        border: 3px solid black;
+        margin: 15px;
+        -webkit-transition: all 0.5s ease-in;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    span{
+        text-align: center;
+        opacity: 0;
+        margin: 10px;
+        
+    }
+    li:hover span{
+        opacity: 1;
+        background-color: rgba(128, 128, 128, 0.363);
+        padding: 4px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    li:hover{
+        -webkit-transform: scale(1.5);
+    }
+    li#foto01{
+        background: url(imagens/calculadora.png);
+        background-position: center;
+        border-radius: 10px;
+        background-size: 480px 250px;
+    }
+    li#foto02{
+        background: url(imagens/Caça\ aos\ pontos.png);
+        background-position: center;
+        border-radius: 10px;
+        background-size: 480px 250px;
+    }
+    li#foto03{
+        background: url(imagens/planilha\ de\ dados\ somados.png);
+        background-position: center;
+        border-radius: 10px;
+        background-size: 480px 250px;
+    }

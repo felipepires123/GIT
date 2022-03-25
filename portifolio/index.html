@@ -10,15 +10,26 @@
 <body>
 
     <header>
-        <H1>
+
+        <a id="curriculo" href="">
+            <img id="curriculoimg" src="imagens/curriculo-icone.png" alt="">
+        </a>
+
+        <H1 id="titulo">
             Portfólio Carlos Felipe Ramos Pires
         </H1>
+
         <img src="imagens/fotaminha.png" id="perfil" alt="">
-        <select name="idioma" id="idioma">
-            <option value="1">Português</option>
-            <option value="2">English</option>
-        </select>
-        <input type="button" value="Traduzir" onclick="lingua()">
+
+        <form>
+            <p id="linguagem"> linguagem</p>
+            <select name="idioma" id="idioma">
+                <option value="1">Português</option>
+                <option value="2">English</option>
+            </select>
+            
+            <input type="button" id="traduzab" value="Traduzir" onclick="lingua()">
+        </form>
     </header>
     <section>
         <article>

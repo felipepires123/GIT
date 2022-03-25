@@ -6,6 +6,7 @@ function lingua(){
     var calc = document.getElementById('calc')
     var pontos = document.getElementById('pontos')
     var planilha = document.getElementById('planilha')
+    var titulo = document.getElementById('titulo')
 
     if (idioma.value == 1) {
         p1.innerHTML = 'Olá meu nome é Carlos Felipe Ramos Pires, sou programador iniciante, e criei esta página web para apresentar algumas páginas que criei ao longo do tempo, desde que comecei a programar.'
@@ -13,6 +14,7 @@ function lingua(){
         calc.innerHTML = 'Calculadora'
         pontos.innerHTML = 'Caça aos pontos' 
         planilha.innerHTML = 'Calculadora'
+        titulo.innerHTML = 'Portfólio Carlos Felipe Ramos Pires'
 
     }
     else{
@@ -21,5 +23,6 @@ function lingua(){
         calc.innerHTML = 'Calculate'
         pontos.innerHTML = 'Search the points'
         planilha.innerHTML = 'Data sheet'
+        titulo.innerHTML = 'Portfolio Carlos Felipe Ramos Pires'
     }
 }
