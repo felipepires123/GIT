@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background-image: url("imagens/BACK\ GROUND.jpg");
 }
 /*cabeçalho da pagina*/
 header{
@@ -10,28 +10,31 @@ header{
 }
     /*esse form é da linguagem */
     form{
+        width: 100px;
+        height: auto;
         position: relative;
         top: -58px ;
         left: -500px;
         text-align: center;
         margin: auto;
-        border: rgba(0, 0, 0, 0) solid 2px;
-        width: 100px;
-        height: auto;
+        border-radius: 10px;
+        border: rgb(255, 255, 255) solid 2px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.692);
     }
     p#linguagem{
         margin: 4px;
         font-family: fantasy;
     }
     #traduzab{
-        background-color: rgb(61, 88, 161);
+        background-color: rgb(66, 66, 66);
         color: white;
         border: unset;
         margin: 4px;
         border-radius: 5px;
     }
     #idioma{
-        border: solid 5px rgb(61, 88, 161);
+        border: solid 5px rgb(61, 88, 161) 2px;
         border-radius: 10px;
     }
     /*Esse H1 é do titulo*/
@@ -87,8 +90,8 @@ header{
 /*Corpo da pagina*/
 section{
     width: 930px;
-    background-color: rgb(196, 227, 255);
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.514);
+    background-color: rgba(255, 255, 255, 0.692);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.87);
     border-radius: 20px;
     text-align: justify;
     padding: 10px;
@@ -96,6 +99,16 @@ section{
     border: 1px solid black;
     font-family:Arial, Helvetica, sans-serif ;
 }
+    p#p1{
+        font-size: 18pt;
+        margin: 5px;
+    }
+
+    p#p2{
+        font-size: 18pt;
+        margin: 5px;
+    }
+
     img{
         width: 480px;
         height: 250px;
@@ -113,6 +126,7 @@ section{
         width: 240px;
         height: 125px;
         border: 3px solid black;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.685);
         margin: 15px;
         -webkit-transition: all 0.5s ease-in;
     }
